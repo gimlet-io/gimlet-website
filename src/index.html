@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gimlet - Deploy to Kubernetes without the boilerplate</title>
+  </head>
+  <body>
+    <div class="w-full bg-yellow-300 relative">
+    <svg class="fill-current text-yellow-200 absolute right-0 top-0 z-0" width="300" height="300" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(300,300)">
+        <path d="M181.3,-128.7C213,-104.8,201.5,-30.7,178.4,28.7C155.2,88.1,120.4,132.8,79.5,144.6C38.6,156.5,-8.2,135.4,-68.5,116.4C-128.7,97.3,-202.3,80.1,-205.5,51.2C-208.7,22.2,-141.5,-18.5,-95.5,-45.7C-49.5,-72.8,-24.8,-86.4,25,-106.4C74.8,-126.3,149.6,-152.6,181.3,-128.7Z" />
+      </g>
+    </svg>
+    <svg class="fill-current text-yellow-200 absolute right-0 top-0 m-32 mr-48 z-0" width="300" height="300" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(300,300)">
+        <path d="M92.3,-77.3C119.4,-39.6,141.1,-1.2,144.3,52.2C147.4,105.6,132.1,174,96.3,185.8C60.5,197.6,4.2,152.9,-50.8,120.6C-105.9,88.3,-159.7,68.5,-188.2,20.9C-216.6,-26.7,-219.7,-102.2,-184.1,-141.8C-148.5,-181.5,-74.3,-185.2,-20.8,-168.6C32.6,-152,65.2,-115,92.3,-77.3Z" />
+      </g>
+    </svg>
+    <div class="container mx-auto p-6 z-10">	
+      <div class="w-full flex items-center justify-between">
+        <a class="flex items-center text-gray-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#">
+          <svg class="h-8 fill-current text-gray-600 pr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8.4 4a2.4 2.4 0 1 0-4.8 0c0 .967.576 1.796 1.4 2.176v7.649A2.393 2.393 0 0 0 3.6 16a2.4 2.4 0 1 0 4.8 0c0-.967-.576-1.796-1.4-2.176V6.176A2.396 2.396 0 0 0 8.4 4zM7.384 16a1.385 1.385 0 1 1-2.77 0 1.385 1.385 0 0 1 2.77 0zM6 5.385a1.385 1.385 0 1 1 .001-2.77A1.385 1.385 0 0 1 6 5.386zm9 8.439V6.176A2.395 2.395 0 0 0 16.4 4a2.4 2.4 0 1 0-4.8 0c0 .967.576 1.796 1.4 2.176v7.649a2.395 2.395 0 0 0-1.4 2.176 2.4 2.4 0 1 0 4.8 0c0-.968-.575-1.797-1.4-2.177zM12.616 4a1.384 1.384 0 1 1 2.769 0 1.385 1.385 0 0 1-2.769 0zM14 17.385a1.385 1.385 0 1 1 0-2.77 1.385 1.385 0 0 1 0 2.77z"/></svg>
+          GIMLET
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <section>
+      <div class="w-full bg-yellow-300">
+      <div class="container m-auto pb-20 pt-12 px-6">
+        <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
+          <h1 class="my-4 text-3xl md:text-5xl text-gray-700 font-bold leading-tight text-center md:text-left z-10">Deploy to Kubernetes without the boilerplate</h1>
+          <p class="leading-normal text-base md:text-2xl text-gray-700 mb-8 text-center md:text-left z-10">Gimlet brings good defaults so you deploy your microservices within minutes.</p>
+          <button class="mx-auto lg:mx-0 hover:bg-gray-100 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg  z-10">Sign up for the beta!</button>
+        </div>
+      </div>
+      </div>
+      <div class="w-full">
+        <svg class="fill-current text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 40"><path  d="M0,160L0,160L205.7,160L205.7,32L411.4,32L411.4,0L617.1,0L617.1,160L822.9,160L822.9,192L1028.6,192L1028.6,32L1234.3,32L1234.3,192L1440,192L1440,0L1234.3,0L1234.3,0L1028.6,0L1028.6,0L822.9,0L822.9,0L617.1,0L617.1,0L411.4,0L411.4,0L205.7,0L205.7,0L0,0L0,0Z"></path></svg>
+      </div>
+    </section>
+
+    <!-- https://getwaves.io/ https://www.blobmaker.app/ -->
+
+    <section>
+      <div class="container m-auto max-w-5xl pt-24">
+        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Is this another CI engine?</h2>
+        <div class="flex">
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold">No</h3>
+            <p>Gimlet sits between your CI and your cluster.</p>
+          </div>
+          <div class="flex-1 text-gray-600  px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Gimlet takes over deployment from CI</h3>
+            <p>This simplifies your CI and allows more advanced deployment strategies.</p>
+          </div>
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold">It's GitOps</h3>
+            <p>Gimlet is built on opensource GitOps tools, and acts as the glue between them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="relative">
+      <div class="container m-auto max-w-2xl pt-24 z-10">
+        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Deploy in minutes</h2>
+        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight">Preflight</h3>
+        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
+          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Make sure your CI builds and uploads a Docker image to the registry</p>
+          <p class="text-gray-400 mt-2">Your CI verifies your app and builds a Docker image, but does not deploy to Kubernetes anymore. Gimlet does.
+          It picks up Github statuses and kicks in right after your CI is done.</p>
+        </div>
+
+        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight">Configure your app</h3>
+        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
+          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Enable your repo and answer a few questions</p>
+          <p class="text-gray-400 mt-2">Kubernetes manifests all look alike. Skip the boilerplate, set only what is unique to your app!</p>
+          <p class="text-gray-400 mt-2">Gimlet has good defaults, so most likely you click enable or change only a few things. You don't like clicking? Set these values in code, in the .gimlet.yml file.</p>
+        </div>
+
+        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight">Trigger a deployment</h3>
+        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
+          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Push a commit</p>
+          <p class="text-gray-400 mt-2">or promote a commit to an environment.</p>
+        </div>
+      </div>
+      <svg class="fill-current absolute right-0 top-0 m-32" style="color: #FFF3C4;z-index: -1" width="300" height="300" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(300,300)">
+          <path d="M92.3,-77.3C119.4,-39.6,141.1,-1.2,144.3,52.2C147.4,105.6,132.1,174,96.3,185.8C60.5,197.6,4.2,152.9,-50.8,120.6C-105.9,88.3,-159.7,68.5,-188.2,20.9C-216.6,-26.7,-219.7,-102.2,-184.1,-141.8C-148.5,-181.5,-74.3,-185.2,-20.8,-168.6C32.6,-152,65.2,-115,92.3,-77.3Z" />
+        </g>
+      </svg>
+  
+      <div class="text-center mt-4">
+        <button class="mx-auto lg:mx-0 bg-blue-200 hover:bg-blue-300 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg">Sign up for the beta!</button>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="bg-pattern">
+      <div class="container m-auto max-w-2xl py-8 mt-8">
+        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Gimlet brings non trivial benefits</h2>
+        <div class="flex">
+          <div class="flex-grow text-gray-600  px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Rollbacks and disaster recovery</h3>
+            <p>Day 2 considerations like rollbacks, backups and disaster recovery are available in Gimlet. Thanks to the GitOps approach.</p>
+          </div>
+          <div class="flex-none">
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Preview environments</h3>
+            <p>Gimlet comes with per branch preview environments, with customizable branch patterns and cleanup strategy.</p>
+          </div>
+          <div class="flex-none">
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Uniform deployments</h3>
+            <p>Gimlet manages a customizable master template, so your apps are deployed identically. Making SRE life easier.</p>
+          </div>
+          <div class="flex-none">
+          </div>
+        </div>
+        <div class="flex">
+          <div class="flex-1 text-gray-600  px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Best in class app dashboard for Kubernetes</h3>
+            <p>Gimlet brings app specific dashboards that work on mobile. No more inventory view. See only what you care about.</p>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button class="mx-auto lg:mx-0 bg-blue-200 hover:bg-blue-300 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg">Sign up for the beta!</button>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container m-auto max-w-5xl pt-20 pb-12">
+        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Open source best practices. Packaged.</h2>
+        <div class="flex">
+          <div class="flex-1 text-gray-600  px-4 py-2 m-2">
+            <h3 class="text-base font-bold">Builds on best in class opensource projects</h3>
+            <p>Gimlet uses Flux and Flagger.</p>
+          </div>
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold mb-2">Spares weeks of custom DevOps work</h3>
+            <p>Kubernetes is a nice building block, but making your on PaaS is not an easy task. Gimlet has the design what you would have come up with anyways. Kinda.</p>
+          </div>
+          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
+            <h3 class="text-base font-bold">SaaS or self host</h3>
+            <p>Get started on the hosted service. Self-host later for compliance if you need to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div>
+      <svg class="fill-current text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0,288L0,224L102.9,224L102.9,224L205.7,224L205.7,128L308.6,128L308.6,224L411.4,224L411.4,288L514.3,288L514.3,32L617.1,32L617.1,64L720,64L720,160L822.9,160L822.9,160L925.7,160L925.7,96L1028.6,96L1028.6,192L1131.4,192L1131.4,256L1234.3,256L1234.3,160L1337.1,160L1337.1,128L1440,128L1440,320L1337.1,320L1337.1,320L1234.3,320L1234.3,320L1131.4,320L1131.4,320L1028.6,320L1028.6,320L925.7,320L925.7,320L822.9,320L822.9,320L720,320L720,320L617.1,320L617.1,320L514.3,320L514.3,320L411.4,320L411.4,320L308.6,320L308.6,320L205.7,320L205.7,320L102.9,320L102.9,320L0,320L0,320Z"></path></svg>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
