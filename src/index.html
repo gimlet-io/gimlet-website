@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <title>Gimlet - Deploy to Kubernetes without the boilerplate</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers.">
+    <meta name="description"
+          content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta content="Gimlet - Deploy to Kubernetes without the boilerplate" property="og:title">
@@ -14,175 +15,127 @@
     <meta content="https://gimlet.laszlo.cloud/gimlet.png" property="og:image">
     <meta content="https://gimlet.laszlo.cloud/" property="og:url">
     <meta content="Gimlet" property="og:site_name">
-    <meta content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers." property="og:description">
+    <meta content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers."
+          property="og:description">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@laszlocph">
     <meta name="twitter:creator" content="@laszlocph">
     <meta name="twitter:title" content="Gimlet - Deploy to Kubernetes without the boilerplate">
-    <meta name="twitter:description" content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers.">
+    <meta name="twitter:description"
+          content="Gimlet brings good defaults so you deploy your services within minutes. It's a release manager for Kubernetes with per branch QA environment support and operations dashboard for developers.">
     <meta name="twitter:image" content="https://gimlet.laszlo.cloud/gimlet.png">
 
-  </head>
-  <body>
-    <div class="w-full bg-yellow-300 relative">
-    <div class="container mx-auto p-6 z-10">	
-      <div class="w-full flex items-center justify-between">
-        <a class="flex items-center text-gray-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="#">
-          <svg class="h-8 fill-current text-gray-600 pr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8.4 4a2.4 2.4 0 1 0-4.8 0c0 .967.576 1.796 1.4 2.176v7.649A2.393 2.393 0 0 0 3.6 16a2.4 2.4 0 1 0 4.8 0c0-.967-.576-1.796-1.4-2.176V6.176A2.396 2.396 0 0 0 8.4 4zM7.384 16a1.385 1.385 0 1 1-2.77 0 1.385 1.385 0 0 1 2.77 0zM6 5.385a1.385 1.385 0 1 1 .001-2.77A1.385 1.385 0 0 1 6 5.386zm9 8.439V6.176A2.395 2.395 0 0 0 16.4 4a2.4 2.4 0 1 0-4.8 0c0 .967.576 1.796 1.4 2.176v7.649a2.395 2.395 0 0 0-1.4 2.176 2.4 2.4 0 1 0 4.8 0c0-.968-.575-1.797-1.4-2.177zM12.616 4a1.384 1.384 0 1 1 2.769 0 1.385 1.385 0 0 1-2.769 0zM14 17.385a1.385 1.385 0 1 1 0-2.77 1.385 1.385 0 0 1 0 2.77z"/></svg>
-          GIMLET
-        </a>
-      </div>
-    </div>
-    </div>
+</head>
+<body>
+<script src="bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
 
-    <section>
-      <div class="w-full bg-yellow-300">
-      <div class="container m-auto pb-8 md:pb-32 pt-12 px-6">
-        <div class="flex-none lg:flex">
-          <div class="flex-none lg:flex-1">
-            <h1 class="my-4 text-3xl md:text-5xl text-gray-700 font-bold leading-tight text-center lg:text-left z-10">Deploy to Kubernetes without the boilerplate</h1>
-            <p class="leading-normal text-base md:text-2xl text-gray-700 mb-16 text-center lg:text-left z-10">Gimlet brings good defaults so you deploy your services within minutes.</p>
-            <div class="text-center lg:text-left">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7nQrP89ij8M40jdr7ubV9yJ6hWRFp7EZzvDI27kKeESLEqQ/viewform?usp=sf_link" target="_blank" class="m-auto lg:mx-0 hover:bg-gray-100 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg z-10">Sign up for the beta!</a>
+<div x-data="{ open: false }" class="relative overflow-hidden bg-yellow-200">
+    <div class="max-w-screen-xl mx-auto ">
+        <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 bg-yellow-200">
+            <div class="pt-6 px-4 sm:px-6 lg:px-8">
+                <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start">
+                    <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                        <div class="flex items-center justify-between w-full md:w-auto">
+                            <a href="#">
+                                <img class="h-8 w-auto sm:h-10" src="/img/logos/workflow-mark-on-white.svg" alt=""/>
+                            </a>
+                            <div class="-mr-2 flex items-center md:hidden">
+                                <button @click="open = true" type="button"
+                                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M4 6h16M4 12h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:ml-10 md:pr-4">
+                        <a href="#"
+                           class="font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Product</a>
+                        <a href="#"
+                           class="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Documentation</a>
+                        <a href="#"
+                           class="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Pricing</a>
+                        <a href="#"
+                           class="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Blog</a>
+                    </div>
+                </nav>
             </div>
-          </div>
-          <div class="flex-1 mt-16 md:mt-20 lg:mt-0">
-            <iframe class="mx-auto w-auto h-40 md:w-3/4 md:h-64" src="https://www.youtube.com/embed/videoseries?list=PLjJkiSWPwuPJKcQiWF26EA1bdtRKSeowk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="w-full">
-        <svg class="fill-current text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 40"><path  d="M0,160L0,160L205.7,160L205.7,32L411.4,32L411.4,0L617.1,0L617.1,160L822.9,160L822.9,192L1028.6,192L1028.6,32L1234.3,32L1234.3,192L1440,192L1440,0L1234.3,0L1234.3,0L1028.6,0L1028.6,0L822.9,0L822.9,0L617.1,0L617.1,0L411.4,0L411.4,0L205.7,0L205.7,0L0,0L0,0Z"></path></svg>
-      </div>
-    </section>
 
-    <!-- https://getwaves.io/ https://www.blobmaker.app/ -->
+            <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                <div class="rounded-lg shadow-md">
+                    <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+                        <div class="px-5 pt-4 flex items-center justify-between">
+                            <div>
+                                <img class="h-8 w-auto" src="/img/logos/workflow-mark-on-white.svg" alt=""/>
+                            </div>
+                            <div class="-mr-2">
+                                <button @click="open = false" type="button"
+                                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-2 pt-2 pb-3">
+                            <a href="#"
+                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Product</a>
+                            <a href="#"
+                               class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Features</a>
+                            <a href="#"
+                               class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Marketplace</a>
+                            <a href="#"
+                               class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Company</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <section>
-      <div class="relative">
-      <div class="container m-auto max-w-2xl pt-8 md:pt-24 z-10">
-        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Deploy in minutes</h2>
-        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight p-2">Preflight</h3>
-        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
-          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Make sure your CI builds and uploads a Docker image to the registry</p>
-          <p class="text-gray-400 mt-2">Your CI verifies your app and builds a Docker image, but does not deploy to Kubernetes anymore. Gimlet does.
-          It picks up Github statuses and kicks in right after your CI is done.</p>
+            <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <div class="sm:text-center lg:text-left">
+                    <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+                        Kubernetes automation for
+                        <br class="xl:hidden"/>
+                        <span class="text-teal-600">platform teams</span>
+                    </h2>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Readymade automation otherwise you would have to implement - and maintain.
+                    </p>
+                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                        <div class="rounded-md shadow">
+                            <a href="#"
+                               class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                Beta access
+                            </a>
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <a href="#"
+                               class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-teal-700 bg-indigo-100 hover:text-teal-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2 text-yellow-200"
+                 fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon points="50,0 100,0 50,100 0,100"/>
+            </svg>
         </div>
-
-        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight p-2">Configure your app</h3>
-        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
-          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Enable your repo and answer a few questions</p>
-          <p class="text-gray-400 mt-2">Kubernetes manifests all look alike. Skip the boilerplate, set only what is unique to your app!</p>
-          <p class="text-gray-400 mt-2">Gimlet has good defaults, so most likely you click enable or change only a few things. You don't like clicking? Set these values in code, in the .gimlet.yml file.</p>
-        </div>
-
-        <h3 class="my-4 text-lg text-gray-600 font-bold leading-tight p-2">Trigger a deployment</h3>
-        <div class="flex-grow text-gray-600 px-4 py-2 m-2">
-          <p><svg class="h-6 fill-current text-gray-600 pr-2 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11 10L8.698 7.494a.512.512 0 0 1 0-.718.5.5 0 0 1 .71 0l2.807 2.864a.51.51 0 0 1 0 .717l-2.807 2.864a.498.498 0 0 1-.71 0 .51.51 0 0 1 0-.717L11 10zM10 .4a9.6 9.6 0 0 1 9.6 9.6c0 5.303-4.298 9.6-9.6 9.6S.4 15.303.4 10A9.6 9.6 0 0 1 10 .4zm0 17.954a8.354 8.354 0 1 0 0-16.709 8.354 8.354 0 0 0 0 16.709z"/></svg>Push a commit</p>
-          <p class="text-gray-400 mt-2">or promote a commit to an environment.</p>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7nQrP89ij8M40jdr7ubV9yJ6hWRFp7EZzvDI27kKeESLEqQ/viewform?usp=sf_link" target="_blank" class="mx-auto lg:mx-0 bg-blue-200 hover:bg-blue-300 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg">Sign up for the beta!</a>
-      </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="bg-pattern">
-      <div class="container m-auto max-w-2xl py-8 mt-8">
-        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Gimlet brings non trivial benefits</h2>
-        <div class="flex">
-          <div class="flex-grow text-gray-600  px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Rollbacks and disaster recovery</h3>
-            <p>Day 2 considerations like rollbacks, backups and disaster recovery are available in Gimlet. Thanks to the GitOps approach.</p>
-          </div>
-          <div class="flex-none">
-          </div>
-        </div>
-        <div class="flex">
-          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Preview environments</h3>
-            <p>Gimlet comes with per branch preview environments, with customizable branch patterns and cleanup strategy.</p>
-          </div>
-          <div class="flex-none">
-          </div>
-        </div>
-        <div class="flex">
-          <div class="flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Uniform deployments</h3>
-            <p>Gimlet provides a master template, so your apps are deployed identically. Making SRE life easier.</p>
-          </div>
-          <div class="flex-none">
-          </div>
-        </div>
-        <div class="flex">
-          <div class="flex-1 text-gray-600  px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Best in class app dashboard for Kubernetes</h3>
-            <p>Gimlet brings app specific dashboards that work on mobile. No more inventory view. See only what you care about.</p>
-          </div>
-        </div>
-        <div class="text-center mt-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7nQrP89ij8M40jdr7ubV9yJ6hWRFp7EZzvDI27kKeESLEqQ/viewform?usp=sf_link" target="_blank" class="mx-auto lg:mx-0 bg-blue-200 hover:bg-blue-300 bg-white text-gray-700 font-bold rounded-full my-6 py-4 px-12 shadow-lg">Sign up for the beta!</a>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container m-auto w-full md:max-w-5xl pt-8 md:pt-24">
-        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center">Is this another CI engine?</h2>
-        <div class="sm:flex">
-          <div class="flex-none sm:flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold">No.</h3>
-            <p>Gimlet sits between your CI and your cluster.</p>
-          </div>
-          <div class="flex-none sm:flex-1 text-gray-600  px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Gimlet takes over deployment from CI</h3>
-            <p>This simplifies your CI and allows more advanced deployment strategies.</p>
-          </div>
-          <div class="flex-none sm:flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold">It's GitOps</h3>
-            <p>Gimlet is built on opensource GitOps tools, and acts as the glue between them.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container m-auto w-full sm:max-w-5xl pt-8 md:pt-20 pb-12">
-        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center p-2">Open source best practices. Packaged.</h2>
-        <div class="sm:flex">
-          <div class="flex-none sm:flex-1 text-gray-600  px-4 py-2 m-2">
-            <h3 class="text-base font-bold">Builds on best in class opensource projects</h3>
-            <p>Gimlet uses Flux and Flagger.</p>
-          </div>
-          <div class="flex-none sm:flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold mb-2">Spares weeks of custom DevOps work</h3>
-            <p>Kubernetes is a nice building block, but making your own PaaS is not an easy task. Gimlet has the design what you would have come up with anyways. Kinda.</p>
-          </div>
-          <div class="flex-none sm:flex-1 text-gray-600 px-4 py-2 m-2">
-            <h3 class="text-base font-bold">SaaS or self host</h3>
-            <p>Get started on the hosted service. Self-host later for compliance if you need to.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container m-auto w-full sm:max-w-5xl pt-8 md:pt-20 pb-24">
-        <h2 class="my-4 text-xl md:text-4xl text-blue-900 font-bold leading-tight text-center p-2">Gimlet Deepdive Series</h2>
-        <div class="sm:flex">
-          <iframe class="mx-auto w-auto h-40 md:w-3/4 md:h-64" src="https://www.youtube.com/embed/videoseries?list=PLjJkiSWPwuPKG_3X7WsOtfr4MpcdjRzn7" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <div>
-      <svg class="fill-current text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path d="M0,288L0,224L102.9,224L102.9,224L205.7,224L205.7,128L308.6,128L308.6,224L411.4,224L411.4,288L514.3,288L514.3,32L617.1,32L617.1,64L720,64L720,160L822.9,160L822.9,160L925.7,160L925.7,96L1028.6,96L1028.6,192L1131.4,192L1131.4,256L1234.3,256L1234.3,160L1337.1,160L1337.1,128L1440,128L1440,320L1337.1,320L1337.1,320L1234.3,320L1234.3,320L1131.4,320L1131.4,320L1028.6,320L1028.6,320L925.7,320L925.7,320L822.9,320L822.9,320L720,320L720,320L617.1,320L617.1,320L514.3,320L514.3,320L411.4,320L411.4,320L308.6,320L308.6,320L205.7,320L205.7,320L102.9,320L102.9,320L0,320L0,320Z"></path></svg>
     </div>
-    <script src="bundle.js"></script>
-  </body>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full hidden lg:block"
+             src="gimlet-shot2.png"
+             alt=""/>
+        <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:hidden"
+             src="gimlet-shot-sm.png"
+             alt=""/>
+    </div>
+</div>
+</body>
 </html>
