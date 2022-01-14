@@ -115,7 +115,7 @@ It is time to configure the gitops repository to start the release automation fe
 - Generate a keypair with 
 
 ```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ``` 
 
 - Open GitHub, navigate to your gitops repository, and under *Settings > Deploy keys* click on *"Add deploy key"*
