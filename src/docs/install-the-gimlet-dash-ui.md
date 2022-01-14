@@ -198,7 +198,7 @@ cat << EOF > create-app.html
   input.value = JSON.stringify({
   "name": "Gimlet Dash",
   "url": "https://gimlet.mycompany.com",
-  "callback_url": "https://gimlet.mycompany.com",
+  "callback_url": "https://gimlet.mycompany.com/auth",
   "hook_attributes": {
     "url": "https://gimlet.mycompany.com/hook"
   },
