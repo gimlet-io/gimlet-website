@@ -215,7 +215,8 @@ cat << EOF > create-app.html
     "create",
     "push",
     "delete",
-    "status"
+    "status",
+    "check_run"
   ]
   })
 </script>
