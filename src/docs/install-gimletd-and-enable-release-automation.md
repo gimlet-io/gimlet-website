@@ -262,6 +262,6 @@ Before we conclude this tutorial, delete the just made dummy release
 
 ```
 gimlet release delete \
-  --app myap
+  --app myapp \
   --env staging
 ```
