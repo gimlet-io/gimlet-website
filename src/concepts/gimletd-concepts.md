@@ -9,17 +9,17 @@ tags: [docs]
 
 GimletD is the GitOps release manager.
 
-It builds on the concepts, conventions and workflows that Gimlet CLI introduced 
-and extends them with a centralized approach for managing releases.
+It builds on the concepts, conventions and workflows that Gimlet CLI introduced
+and expands them with a centralized approach for managing releases.
 
-It packs all release automation logic that used to be scattered in CI pipelines.
+It encompasses all release automation logic that used to be scattered in CI pipelines.
 
 ## Rational
 
 The GitOps ecosystem lacks tooling to manage the GitOps repository and related workflows.
 
 - How do you store manifests in your GitOps repository?
-- how many GitOps repositories do you have
+- how many GitOps repositories do you have?
 - how do you model clusters, environments, teams and apps?
 
 Organizations have to answer these questions when they implement GitOps.
@@ -32,18 +32,18 @@ GimletD acts as a centralized release manager that adds
 - policy based deploys
 - advanced authorization and security standards
 
-It both allows strict control over releases, and flexibility to rewire the release workflows for all your applications at once.
+It allows both strict control over releases and flexibility to rewire the release workflows for all your applications at once.
 
 And by capturing all release logic, it factors out a large amount of scripting work from CI pipelines into a 
 standardized toolchain.
 
 ## It factors much of the scripting work into a standardized toolchain
 
-Today companies use CI to automate their releases.
+Nowadays, companies use CI to automate their releases.
 
 ![GimletCLI used from CI](/gitops-with-ci.png)
 
-Deploy and rollback steps are implemented in CI pipelines to handle the basic release workflows.
+Deploy and rollback steps are implemented in CI pipelines to handle basic release workflows.
 
 Later on, further release steps are added: dynamic environments, cleanups, notifications.
 
@@ -57,13 +57,13 @@ GimletD assumes all release focused tasks and the management of the GitOps repos
 GimletD achieves this by introducing a new concept, the release artifact. It serves as the means to detach release workflows from CI.
 
 With GimletD, CI pipelines create an artifact for every releasable version of the application, but not release them.
-GimletD then serves as a release manager to perform ad-hoc or policy based releases.
+GimletD then serves as a release manager to perform ad hoc or policy based releases.
 
 GimletD operates only on the releasable artifacts that CI creates. This split allows for the above listed features.
 
 ![GimletD operates on the release artifacts, manages the GitOps repository](/gimletd-with-gitops.png)
 
-** The artifact store is implemented in GimletD, hence the matching colors
+** The artifact store is implemented in GimletD, hence the matching colors.
 
 Now, let's look at the release artifact.
 
