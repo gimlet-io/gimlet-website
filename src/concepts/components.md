@@ -14,8 +14,8 @@ It involves many decisions - big and small, that add up to a lot of work as you 
 Gimlet is a modular take on GitOps that brings an opinionated layer on top of 
 the common GitOps tools. It eliminates much of the decisions you have to make and gets you a developer platform on top of Kubernetes.
 
-Gimlet CLI, GimletD and Gimlet Dash addresses the application configuration problem space. 
-They were made to help developers wanting to deploy their own applications. 
+Gimlet CLI, GimletD and Gimlet Dash address the application configuration problem space.
+They were made to help developers wanting to deploy their own applications.
 
 Gimlet Stack is made for cluster admins to manage infrastructure components (ingress, logging, metrics etc) through a curated update stream.
 
@@ -28,7 +28,7 @@ Gimlet CLI is a command line tool that you run on your laptop.
 - Collect information about versions, look at the release log
 - Render manifests locally for debug purposes
 
-Gimlet CLI talks to GimletD, Gimlet's release manager, to perform most of its capabilities. 4) on the diagram.
+Gimlet CLI talks to GimletD, Gimlet's release manager, to perform most of its functions. (4) on the diagram.
 
 #### Gimlet Dash
 The Gimlet Dashboard is where you can get a comprehensive overview quick.
@@ -47,10 +47,10 @@ Gimlet Agent is a pod running in your Kubernetes cluster. It collects realtime i
 
 GimletD is the release manager. It has write access to the gitops repository (3), and encompasses all logic related to making releases, rollbacks, and git audit log processing.
 
-This is the only components that has write access to the gitops repository.
+This is the only component that has write access to the gitops repository.
 
 #### Flux
-Flux is the gitops controller. It polls the gitops repository (1) and applies changes to the Kubernetes cluster (2).
+Flux is the gitops controller. It pulls the gitops repository (1) and applies changes to the Kubernetes cluster (2).
 
 #### Gitops repository
 
@@ -62,14 +62,14 @@ Where your application source code lives.
 #### Stack CLI
 With Stack CLI, you can bootstrap curated Kubernetes stacks, logging, metrics, ingress and more - all delivered with gitops.
 
-- You can install logging aggregators, metric collectors, ingress controllers and more on your cluster with a few commands, 
-without much knowledge of Helm charts, and their configuration options
+- You can install logging aggregators, metric collectors, ingress controllers and more on your cluster with a few commands,
+without much knowledge of Helm charts and their configuration options
 
 - The components are delivered through a plain git repository with self-contained gitops automation
 
 - You will get constant upgrades for the installed components from the stack curators
 
-You write the infrarstructure gitops repo with the Stack CLI (10) and Flux pulls the changes (11) and applies it on the cluster (2).
+You write the infrastructure gitops repo with the Stack CLI (10) and Flux pulls the changes (11) and applies them on the cluster (2).
 
 #### Infrastructure Gitops repository
 
