@@ -12,7 +12,7 @@ In software, things go wrong sometimes. It is inevitable, so best if you have an
 
 That's why Gimlet provides rollback tooling out of the box. 
 
-On this page you will learn how to use it, first with the CLI then on the UI, and learn what it does actually.
+On this page, you will learn how to use it, first with the CLI, then on the UI, and learn what it actually does.
 
 ## Getting a quick overview
 
@@ -77,17 +77,17 @@ staging/my-app laszlocph/gimletd-test@d2d0a416e6 (1 week ago)
 
 Rollbacks in Gimlet are preforming revert commits on all gitops commits that were made later than the release that you are rolling back to.
 
-With this approach you can be sure that a previous release will be applied verbatim on the cluster. No template re-renders, no waiting on the machinery.
+With this approach, you can be sure that a previous release will be applied verbatim on the cluster. No template rerenders, no waiting on the machinery.
 
 ## Roll back or roll forward
 
 You can't roll back an already rolled back commit. Best to roll forward in this case.
 
-Rollbacks are made for a quick mindless remedy to jump back to previously active gitops state.
+Rolling back is a quick, mindless way to jump back to a previously active gitops state.
 
 If you want to be more creative, best to roll forward by releasing a new version.
 
-## Rolling back on the UI
+## Rolling back with the UI
 
 Each application has a release history bar with the ten most recent deploys.
 If you click the bar, you will see the individual released versions, and you can click the "Rollback to this version" button next to it.
