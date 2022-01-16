@@ -5,7 +5,7 @@ lastUpdated: 2020-12-11
 tags: [docs]
 ---
 
-# How-to manage secrets
+# How to manage secrets
 
 Secrets demand special handling, and often they are stored, managed and configured in a workflow that is adjacent to application deployment.
 
@@ -33,7 +33,7 @@ I want to make it clear that Kubernetes does the right thing.
 Its abstraction allows for secret workflows that can treat secrets in a way that is in sync with your company's information security policies.
 
 But because of that, secret workflows are as diverse as many types of companies are out there:
-I've seen secrets put in CI, cloud key stores, vaults. Automations that unlocks keys in CI, vaults that unseal in the cluster.
+I've seen secrets put in CI, cloud key stores, vaults. Automations that unlock keys in CI, vaults that unseal in the cluster.
 Dev workflows that include cloud CLIs, encrypted git repos, GUIs to punch in secrets.
 Sprinkle this with dev <> ops organizational divisions, and you often get an uncomfortable dev workflow.
 
@@ -55,7 +55,7 @@ It is made possible with the Sealed Secret's project.
 
 ## The steps using Sealed Secrets controller
 
-Bitnami's [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) is based on asymmetric cryptography, just like as your SSH keys or SSL.
+Bitnami's [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) is based on asymmetric cryptography, just like your SSH keys or SSL.
 
 > Encrypt your Secret into a SealedSecret, which is safe to store - even to a public repository. The SealedSecret can be decrypted only by the controller running in the target cluster and nobody else (not even the original author) is able to obtain the original Secret from the SealedSecret.
 
@@ -64,8 +64,8 @@ Bitnami's [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) is ba
 - You download the public key that you will use for sealing all secrets
 - Also, back up the private key, should you need to recover your cluster in case of an emergency.
 
-Sealed secrets cannot be decrypted without the private key, not even by the creator, 
-all the encrypted secrets in the GitOps repository will be useless if you need to recreate the cluster without the private key.
+Sealed secrets cannot be decrypted without the private key, not even by the creator,
+all the encrypted secrets in the GitOps repository will be useless, if you need to recreate the cluster without the private key.
 
 Once you have the controller running, and fetched the public key, you can use Gimlet CLI to seal your Gimlet manifest file.
 
