@@ -63,9 +63,9 @@ staging/frontend mycompany/gitops@2655962fcf5b27553d139005f47c2eec9002c19d  (jus
     mycompany/frontend-3dcf8ec0-96ec-4974-b28b-4e8d2862a359
 ```
 
-## Making ad-hoc releases with the Gimlet Dash UI
+## Making ad hoc releases with the Gimlet Dash UI
 
-If an artifact exist for a given commit, you can push the deploy button next to it.
+If an artifact exists for a given commit, you can push the deploy button next to it.
 
 So locate the desired commit, and hit "Deploy".
 
