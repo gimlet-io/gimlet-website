@@ -15,8 +15,7 @@ One file per environment.
 
 The following example shows two files, one for staging, and one for production.
 
-They only differ in the replica count. However, you can have a completely unique set of configs in your envs.
-The manifest files controls it all.
+They only differ in the replica count. However, you can have a completely unique set of configs in your envs. The manifest files control it all.
 
 ```yaml
 # .gimlet/staging.yaml
