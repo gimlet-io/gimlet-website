@@ -10,14 +10,14 @@ tags: [docs]
 
 You can automate releases to your staging or production environment.
 
-On this page you will learn how to create release policies - that are triggered on certain conditions - 
+On this page, you will learn how to create release policies - that are triggered on certain conditions -
 to automatically release to a target environment.
 
 ## Set release policies in the Gimlet environment file
 
 You can control environment configuration with the Gimlet manifest files in the `.gimlet/` folder in your application source code repository. It pins down the release configuration to a target environment.
 
-As a recap here is an example configuration for an application's staging environment.
+As a recap, here is an example configuration for an application's staging environment.
 
 It pins down the Helm chart to use, its version, and the configuration variables for the staging environment:
 
@@ -105,5 +105,5 @@ Triggers on any commit pushed to a branch that is not `main`.
 
 GimletD supports `push`, `tag` and `pr` events.
 
-It is mandatory to set either the `branch` or the `event` condition, and they can be also defined solo.
-If both are defined, the policy triggers if both conditions are satisfied.
+It is mandatory to set either the `branch` or the `event` condition.
+If both are defined, the policy triggers only if both conditions are satisfied.
