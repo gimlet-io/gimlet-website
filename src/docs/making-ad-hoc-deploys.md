@@ -5,13 +5,13 @@ lastUpdated: 2020-03-16
 tags: [docs]
 ---
 
-# Making ad-hoc deploys
+# Making ad hoc deploys
 
-GimletD operates only on the releasable artifacts that you shipped from your CI pipeline, therefore to make an adhoc release, first you should browse the stored artifacts to pick the desired version.
+GimletD operates only on the releasable artifacts that you shipped from your CI pipeline, therefore, to make an ad hoc release, first, you should browse the stored artifacts to pick the desired version.
 
-In this guide first 
-- you see how to make ad-hoc releases with Gimlet CLI
-- then you will see how to do so on the Gimlet Dash UI.
+In this guide, first, 
+- you will see how to make ad hoc releases with Gimlet CLI
+- then you will see how to do the same on the Gimlet Dash UI.
 
 If you need a refresher, you can see how artifacts are shipped from CI pipelines to Gimlet in the [Automatically deploy your application to staging](/docs/automatically-deploy-your-application-to-staging) tutorial.
 
@@ -51,7 +51,7 @@ gimlet release make \
 
 ## Tracking releases
 
-Besides following the Slack notifications messages, you can query the audit log from GimletD:
+Besides following Slack notification messages, you can query the audit log from GimletD:
 
 ```
 gimlet release list --env staging --app frontend
@@ -63,9 +63,9 @@ staging/frontend mycompany/gitops@2655962fcf5b27553d139005f47c2eec9002c19d  (jus
     mycompany/frontend-3dcf8ec0-96ec-4974-b28b-4e8d2862a359
 ```
 
-## Making ad-hoc releases with the Gimlet Dash UI
+## Making ad hoc releases with the Gimlet Dash UI
 
-If an artifact exist for a given commit, you can push the deploy button next to it.
+If an artifact exists for a given commit, you can push the deploy button next to it.
 
 So locate the desired commit, and hit "Deploy".
 
