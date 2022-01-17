@@ -5,13 +5,13 @@ lastUpdated: 2020-12-11
 tags: [docs]
 ---
 
-# How-to configure preview environments
+# How to configure preview environments
 
-Branch deploys, review apps, PR deploys, preview environments.. It's called by many names, but the functionality is ubiquitous:
+Branch deploys, review apps, PR deploys, preview environments. It's called by many names, but the functionality is ubiquitous:
 
 the ability to deploy a non-mainline version of the application on demand, on its own URL.
 
-In this guide you will learn how to set up preview environments with Gimlet's manifest file.
+In this guide, you will learn how to set up preview environments with Gimlet's manifest file.
 
 ## Gimlet environments recap
 
@@ -173,4 +173,4 @@ values:
     tlsEnabled: true
 ```
 
-For all the possibilities please refer to the [Configuring policy-based deploys](/docs/configuring-policy-based-deploys#supported-git-refs)
+For all other possibilities, please refer to the [Configuring policy-based deploys](/docs/configuring-policy-based-deploys#supported-git-refs)
