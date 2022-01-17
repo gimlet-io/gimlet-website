@@ -7,19 +7,19 @@ tags: [docs]
 
 # Install GimletD and enable release automation
 
-In this tutorial you will install GimletD, Gimlet's release manager component, and test the release automation.
+In this tutorial, you will install GimletD, Gimlet's release manager component, and test the release automation function.
 
 GimletD is the release manager. It has write access to the gitops repository, and encompasses all logic related to making releases, rollbacks, and git audit log processing.
 
 ## Prerequisites
 
 - Make sure to orient yourself by learning about the [components](/concepts/components) of Gimlet.
-- Read the [GimletD concepts](/concepts/gimletd-concepts) to see how it fits to the Gimlet universe and to CI pipelines
+- Read the [GimletD concepts](/concepts/gimletd-concepts) to see how it fits into the Gimlet universe and CI pipelines.
 - You need to have a free GitHub account, or any other git provider that you know enough to translate the Github configuration instructions in this guide to the provider of your choice.
 
 ## Installation yamls and configuration
 
-You can get the Kubernetes yamls by rendering the Helm chart with the minimum configuration you can see bellow:
+You can get the Kubernetes yamls by rendering the Helm chart with the minimum configuration you can see below:
 
 ```bash
 cat << EOF > values.yaml
@@ -56,9 +56,9 @@ probe:
 +    size: 5Gi
 ```
 
-GimletD uses to volumes:
-- the `data` volume for the sqlite database to keep metadata in it
-- the `repo-cache` volume what GimletD uses as scratch space for git operations. It is a good practice to add a volume under it, so the high IO work GimletD does is performed on a real disk, with measurable and controllable IO, and not on the operating system disk.
+The purpose of these volumes are:
+- the `data` volume is for the sqlite database to keep metadata in it.
+- the `repo-cache` volume is what GimletD uses as scratch space for git operations. It is good practice to add a volume under it, so the high IO work GimletD does is performed on a real disk, with measurable and controllable IO, and not on the operating system disk.
 
 ### Expose the GimletD API with an Ingress
 
@@ -108,7 +108,7 @@ Save the returned user token from the result.
 
 ## Configure the gitops repository
 
-GimletD's main job is to work on the gitops repository. It packs all logic that writes the gitops repository, and encapsulates the heavy audit log porcessing algorithms.
+GimletD's main job is to work on the gitops repository. It encompasses all logic that write the gitops repository, and encapsulates the heavy audit log processing algorithms.
 
 It is time to configure the gitops repository to start the release automation features of GimletD:
 
@@ -168,11 +168,11 @@ vars:
 EOF
 ```
 
-## Let's close the feedback loop, set up slack notifications
+## Let's close the feedback loop, set up Slack notifications
 
 First, create a Slack app
 
-To generate a new Slack token visit the [https://api.slack.com/apps](https://api.slack.com/apps) page and follow these steps:
+To generate a new Slack token, visit the [https://api.slack.com/apps](https://api.slack.com/apps) page and follow these steps:
 
 - Create a new application. *"App Name"* is Gimlet, pick your workspace as *"Development Slack Workspace"*
 - Navigate to *"OAuth & Permissions"* on the left sidebar
@@ -199,7 +199,7 @@ probe:
 
 To verify the installation, you are going to 
 - use the Gimlet CLI to ship a dummy artifact to GimletD
-- then make an ad-hoc deploy with `gimlet release make`
+- then make an ad hoc deploy with `gimlet release make`
 - and verify that GimletD made changes to the gitops repository
 
 ### Ship a dummy artifact
@@ -211,7 +211,8 @@ curl -L https://raw.githubusercontent.com/gimlet-io/gimletd/main/fixtures/artifa
   -o artifact.json
 ```
 
-Later in the verification you will deploy this artifact. This is a dummy application that you will have to clean up at the and, but it is perfect to verify GimletD's behavior in an isolated setup.
+Later in the verification process, you will deploy this artifact. This is a dummy application that you will have to clean up at the end of the process,
+but it is perfect to verify GimletD's behavior in an isolated setup.
 
 - Take the API key that you created earlier and set up Gimlet CLI
 
@@ -239,7 +240,7 @@ laszlocph/gimletd-test-repo@main https://github.com/laszlocph/gimletd-test-repo/
   myapp -> staging @ tag
 ```
 
-### Make an ad-hoc deploy
+### Make an ad hoc deploy
 
 Take the artifact ID from the listed artifact and make a release
 
@@ -258,7 +259,7 @@ You should see the gitops repo commit that GimletD made.
 
 ### Cleanup
 
-Before we conclude this tutorial, delete the just made dummy release
+Before we conclude this tutorial, delete the recently made dummy release
 
 ```
 gimlet release delete \
