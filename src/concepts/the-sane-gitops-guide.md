@@ -42,8 +42,6 @@ With gitops, your deployment step is simplified. You only interact with git by w
 
 This split allows for a more declarative software delivery flow - you record in git what state the cluster needs to be in, and leave the rollout for standardized tooling.
 
-In this guide you will use Gimlet to bootstrap the gitops controller and will also use Gimlet to write manifests to the gitops repository. 
-
 ## Pull semantics
 
 The presented flow is just the opposite of a what you find in CI based automation.
