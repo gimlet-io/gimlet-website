@@ -206,7 +206,7 @@ cat << EOF > create-app.html
   "public": false,
   "default_permissions": {
     "checks": "read",
-    "contents": "read",
+    "contents": "write",
     "repository_hooks": "write",
     "statuses": "read",
     "members": "read"
