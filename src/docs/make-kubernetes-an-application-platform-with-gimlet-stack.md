@@ -58,10 +58,10 @@ In this tutorial we are going to use Flux V2 as the GitOps controller, and use t
 Fetch Gimlet Stack and install it with the following commands:
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet-stack/releases/download/v0.3.5/stack-$(uname)-$(uname -m) -o stack
-chmod +x stack
-sudo mv ./stack /usr/local/bin/stack
-stack --version
+curl -L https://github.com/gimlet-io/gimlet-cli/releases/download/v0.12.2/stack-$(uname)-$(uname -m) -o gimlet
+chmod +x gimlet
+sudo mv ./gimlet /usr/local/bin/gimlet
+gimlet --version
 ```
 
 ### Clone your GitOps repository and bootstrap GitOps
@@ -75,7 +75,7 @@ git clone git@github.com:laszlocph/k8s-stack.git
 
 cd k8s-stack
 
-stack bootstrap \
+gimlet gitops bootstrap \
   --single-env \
   --gitops-repo-url git@github.com:laszlocph/k8s-stack.git
 ```
@@ -107,13 +107,13 @@ Let's follow Gimlet Stack's instructions.
 
 ### Authorize Flux to fetch your GitOps repository
 
-The `stack bootstrap` command made a commit to the local copy of the GitOps repository with the gitops controller's deployment manifests.
+The `gimlet gitops bootstrap` command made a commit to the local copy of the GitOps repository with the gitops controller's deployment manifests.
 Let's push that now to origin main.
 
 Before you apply the just written manifests on your Kubernetes cluster, authorize Flux to fetch the contents from Github by creating a read-only deploy key in your GitOps repository.
 
 - Open GitHub, navigate to your repository, and under *Settings > Deploy* keys click on *Add deploy key*
-- Paste the ssh-rsa key from step 2) of the `stack bootstrap` output as a key. `flux-gitops` can be an appropriate name for it
+- Paste the ssh-rsa key from step 2) of the `gimlet gitops bootstrap` output as a key. `flux-gitops` can be an appropriate name for it
 - Make sure to leave the *Allow write access* checkbox unchecked
 
 ![Create a deploy-key](/deploy-key.png)
@@ -124,7 +124,7 @@ After all these steps, it's time to deploy Flux and start the GitOps loop.
 
 After granting access for Flux to read the GitOps repository, there is nothing else left to prepare. We can get to deploying Flux and inspect the GitOps deployment cycle in action.
 
-Apply the GitOps controller manifests on the cluster from step 3) of the `stack bootstrap` output. As a recap, these steps will get Flux deployed:
+Apply the GitOps controller manifests on the cluster from step 3) of the `gimlet gitops bootstrap` output. As a recap, these steps will get Flux deployed:
 
 ```
 kubectl apply -f k8s-stack/flux/flux.yaml
@@ -149,7 +149,7 @@ Congratulations, now you have a working GitOps setup!
 
 But GitOps is only as fun as the applications you are deploying with it. Let's configure now the stack components.
 
-Run `stack configure` and enable Nginx, Prometheus and Loki on the UI that starts:
+Run `gimlet stack configure` and enable Nginx, Prometheus and Loki on the UI that starts:
 
 ![Configure your stack with stack configure](/stack-configure.png)
 
@@ -175,13 +175,13 @@ config:
     host: laszlo.cloud
 ```
 
-Should you made a mistake, just run `stack configure` again. It will read the stack configuration from the stack.yaml, and you can reconfigure it.
+Should you made a mistake, just run `gimlet stack configure` again. It will read the stack configuration from the stack.yaml, and you can reconfigure it.
 
 ## Generate Kubernetes manifests from your stack and deploy it
 
 The only thing left is to generate the manifests from the stack.yaml file that Kubernetes understands.
 
-For that, run `stack generate` and verify the files that have been generated.
+For that, run `gimlet stack generate` and verify the files that have been generated.
 
 ```
 ➜  k8s-stack git:(master) ✗ git status
@@ -236,7 +236,7 @@ and
 kubectl logs -n flux-system -f deploy/kustomize-controller
 ```
 
-To get started using the ingress, and the observability stack, refer to the component descriptions in `stack configure`.
+To get started using the ingress, and the observability stack, refer to the component descriptions in `gimlet stack configure`.
 
 ## Next steps
 

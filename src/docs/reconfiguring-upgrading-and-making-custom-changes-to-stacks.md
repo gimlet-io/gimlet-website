@@ -10,18 +10,18 @@ tags: [docs]
 
 ## Reconfiguring a stack
 
-When you run `stack configure` and configure components on the UI, the configuration options are stored in a file
+When you run `gimlet stack configure` and configure components on the UI, the configuration options are stored in a file
 called `stack.yaml`. 
 
-When next time you run `stack configure` the configuration options are read from `stack.yaml` and you can reconfigure your settings.
+When next time you run `gimlet stack configure` the configuration options are read from `stack.yaml` and you can reconfigure your settings.
 As you can see, the `stack.yaml` file contains the full configuration of your stack, and you should version it in your stack repository.
 
 ## Always re-generate after you reconfigured
 
 `stack.yaml` is Gimlet Stack's own format, therefore for your configuration changes to be effective on the cluster, 
-make sure to run `stack generate` every time you make changes to the `stack.yaml` file. Be that changes through the UI or manually.
+make sure to run `gimlet stack generate` every time you make changes to the `stack.yaml` file. Be that changes through the UI or manually.
 
-Once you ran `stack generate` and made a git commit and pushed, you should see the changes on your cluster.
+Once you ran `gimlet stack generate` and made a git commit and pushed, you should see the changes on your cluster.
 
 ## Stack version is locked
 
@@ -39,21 +39,21 @@ config:
     host: laszlo.cloud
 ```
 
-By default, it is locked to a particular version, therefore every time you run `stack generate` it works with the same stack version and generates Kubernetes resources accordingly.
+By default, it is locked to a particular version, therefore every time you run `gimlet stack generate` it works with the same stack version and generates Kubernetes resources accordingly.
 
 ## Updating
 
-`stack update --check` displays the new versions that can be applied to your stack, while
-running `stack update` will update `stack.yaml` to the latest stack version number:
+`gimlet stack update --check` displays the new versions that can be applied to your stack, while
+running `gimlet stack update` will update `stack.yaml` to the latest stack version number:
 
 ```bash
-$ stack update
+$ gimlet stack update
 
 ⏳  Stack version is updating to v0.3.0... 
 
 ✔️   Config updated. 
 
-⚠️   Run `stack generate` to render resources with the updated stack. 
+⚠️   Run `gimlet stack generate` to render resources with the updated stack. 
 
 📚  Change log:
 
@@ -72,7 +72,7 @@ $ stack update
       • Sealed Secrets to 0.16.0 - nothing major in this one
 ```
 
-Important that you have to run `stack generate` to generate the updated Kubernetes manifests, as `stack update` only updates the stack reference in `stack.yaml`.
+Important that you have to run `gimlet stack generate` to generate the updated Kubernetes manifests, as `gimlet stack update` only updates the stack reference in `stack.yaml`.
 
 Make sure to
 
@@ -87,7 +87,7 @@ You can automate stack upgrades by using automation provided by Gimlet Stack.
 The implemented [Github Action](https://github.com/gimlet-io/gimlet-stack-updater-action/pull/11)
 
 - periodically checks for updates,
-- runs `stack update` on new versions
+- runs `gimlet stack update` on new versions
 - and opens a Pull Request with the new version
 - it can also assign you as reviewer
 
@@ -100,7 +100,7 @@ See the action in an [example workflow](https://github.com/gimlet-io/gimlet-stac
 
 Stack templates only go so far, and it is inevitable that you want to amend the generated manifests in slight ways.
 
-`stack generate` takes your custom changes into account and keeps them even after a configuration change, or an upgrade.
+`gimlet stack generate` takes your custom changes into account and keeps them even after a configuration change, or an upgrade.
 
 In case your custom change is conflicting with the generated content, you have to do a content merge, that should be familiar from git.
 
