@@ -195,6 +195,37 @@ probe:
 +  NOTIFICATIONS_DEFAULT_CHANNEL: gimletd
 ```
 
+# Or if you prefer Discord
+
+- First, make sure you’re logged in on the Discord website.
+- Navigate to the application page: [https://discord.com/developers/applications](https://discord.com/developers/applications)
+- Click on the “New Application” button.
+- Enter "Gimlet" and confirm the pop-up window by clicking the "Create" button.
+- Create a bot by navigating to the “Bot” tab, and clicking the “Build-A-Bot” button.
+- Click the "Add Bot" button on the right and confirm the pop-up window by clicking the "Yes, do it!" button.
+- After you received the "A wild bot has appeared!" message, copy your bot token from the "Build-A-Bot" submenu.
+- Navigate to "OAuth2" -> "URL Generator" on the left panel.
+- Check "Bot" in Scopes and check "Send Messages" in "Bot Permissions" -> "Text Permissions".
+- Copy your generated URL from the bottom of the page, and open it in a new tab.
+- Select the server you would like to add your bot to, and click "Continue". You can only select servers on which you have admin privileges. Make sure the "Send Messages" option is checked, before clicking on the "Authorize" button.
+- After the security check, your bot will automatically join the server.
+- The final step is to get the channel ID of the channel where you would like to get notifications. In order to do that, first you need to go to "User Settings" -> "Advanced", and enable "Developer Mode". This will allow you to see and copy your channel IDs.
+- Now you can copy your text channel ID on Discord's main page by right clicking on the desired channel in the left panel and choosing the "Copy ID" option. 
+
+```diff
+image:
+  repository: ghcr.io/gimlet-io/gimletd
+  tag: latest
+probe:
+  enabled: true
+  path: /
+[...]
++vars:
++  NOTIFICATIONS_PROVIDER: discord
++  NOTIFICATIONS_TOKEN: OTQwO[...]
++  NOTIFICATIONS_DEFAULT_CHANNEL: 140971232847884321
+```
+
 ## Verifying the installation
 
 To verify the installation, you are going to 
