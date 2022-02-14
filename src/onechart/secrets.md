@@ -89,7 +89,7 @@ sealedSecrets:
   secret2: another-secret-to-be-sealed
 ```
 
-Then seal the values with with [Gimlet CLI](/gimlet-cli/manage-secrets-with-gimlet):
+Then seal the values with Gimlet CLI:
 
 ```
 gimlet seal -f values.yaml \
@@ -98,7 +98,7 @@ gimlet seal -f values.yaml \
   -k sealingKey.crt
 ```
 
-Then you can put values file now in git as the secret values are encrypted.
+Now, you can put values file in git as the secret values are encrypted.
 
 ```yaml
 # values.yaml
