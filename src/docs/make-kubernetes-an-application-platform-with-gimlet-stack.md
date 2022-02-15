@@ -58,7 +58,7 @@ In this tutorial we are going to use Flux V2 as the GitOps controller, and use t
 Fetch Gimlet Stack and install it with the following commands:
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet-cli/releases/download/v0.12.2/stack-$(uname)-$(uname -m) -o gimlet
+curl -L https://github.com/gimlet-io/gimlet/releases/download/v0.12.2/stack-$(uname)-$(uname -m) -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
@@ -66,7 +66,7 @@ gimlet --version
 
 ### Clone your GitOps repository and bootstrap GitOps
 
-Now, you will clone your GitOps repository that you just created on GitHub, and place the GitOps controller yaml files in it with the `stack bootstrap` command.
+Now, you will clone your GitOps repository that you just created on GitHub, and place the GitOps controller yaml files in it with the `gimlet gitops bootstrap` command.
 
 Make sure to change the repository name to be the one you created earlier.
 

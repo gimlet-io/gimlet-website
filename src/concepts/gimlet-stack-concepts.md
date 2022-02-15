@@ -36,14 +36,14 @@ The full overview of the various artifacts and actors of Gimlet Stack:
 
 - end-users create a `stack.yaml` file with the full configuration of their stack: enabling the needed components, and configuring them through a series of options
   - end-users can create the `stack.yaml` manually
-  - or through the `stack configure` CLI command which opens a browser based UI from the terminal
+  - or through the `gimlet stack configure` CLI command which opens a browser based UI from the terminal
 - users store the `stack.yaml` in git git@.com:mycompany/gitops-infra-staging.git
-- users generate HelmRelease resources and other Kubernetes manifests from the components defined in `stack.yaml` with the `stack generate` CLI command
+- users generate HelmRelease resources and other Kubernetes manifests from the components defined in `stack.yaml` with the `gimlet stack generate` CLI command
 - users store the generated files in the same git repository as the `stack.yaml` file
 
 
 - users push the changes to git, and the bootstrapped gitops loop syncs it on the cluster.
-- users can bootstrap the gitops loop with the `stack bootstrap` CLI command
+- users can bootstrap the gitops loop with the `gimlet gitops bootstrap` CLI command
 
 ## Stacks
 
