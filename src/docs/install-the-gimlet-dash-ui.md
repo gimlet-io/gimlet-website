@@ -80,6 +80,31 @@ probe:
 - `data` volume to back the SQLite database where Gimlet Dashboard keeps its data
 - `repo-cache` is where Gimlet Dashboard checks out git repositories of your applications. Data can be cleaned from this disk, it serves only as cache. 
 
+## Using Postgresql
+
+```diff
+image:
+  repository: ghcr.io/gimlet-io/gimlet-dashboard
+  tag: latest
+  pullPolicy: Always
+containerPort: 9000
+probe:
+  enabled: true
+  path: /
+volumes:
+-  - name: data
+-    path: /var/lib/gimlet-dashboard
+-    size: 1Gi
+-    storageClass: default
+  - name: repo-cache
+    path: /tmp/gimlet-dashboard
+    size: 5Gi
+    storageClass: default
++vars:
++  DATABASE_DRIVER: postgres
++  DATABASE_CONFIG: "postgres://gimlet_dashboard:yourpassword@postgresql:5432/gimlet_dashboard?sslmode=disable"
+```
+
 ## Expose the Gimlet Dashboard with an Ingress
 
 ```diff
