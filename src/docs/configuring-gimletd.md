@@ -7,6 +7,27 @@ tags: [docs]
 
 # Configuring GimletD
 
+## Using Postgresql
+
+```diff
+image:
+  repository: ghcr.io/gimlet-io/gimletd
+  tag: latest
+probe:
+  enabled: true
+  path: /
+volumes:
+-  - name: data
+-    path: /var/lib/gimletd
+-    size: 1Gi
+  - name: repo-cache
+    path: /tmp/gimletd
+    size: 5Gi
++vars:
++  DATABASE_DRIVER: postgres
++  DATABASE_CONFIG: "postgres://gimletd:yourpassword@postgresql:5432/gimletd?sslmode=disable"
+```
+
 ## Debug sidecar container
 
 In case you need tools to debug.
