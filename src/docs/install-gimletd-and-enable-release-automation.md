@@ -195,7 +195,7 @@ probe:
 +  NOTIFICATIONS_DEFAULT_CHANNEL: gimletd
 ```
 
-# Or if you prefer Discord
+## Or if you prefer Discord
 
 - First, make sure you’re logged in on the Discord website.
 - Navigate to the application page: [https://discord.com/developers/applications](https://discord.com/developers/applications)
