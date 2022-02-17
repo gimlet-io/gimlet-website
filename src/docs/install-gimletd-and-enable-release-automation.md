@@ -211,6 +211,7 @@ probe:
 - After the security check, your bot will automatically join the server.
 - The final step is to get the channel ID of the channel where you would like to get notifications. In order to do that, first you need to go to "User Settings" -> "Advanced", and enable "Developer Mode". This will allow you to see and copy your channel IDs.
 - Now you can copy your text channel ID on Discord's main page by right clicking on the desired channel in the left panel and choosing the "Copy ID" option. 
+- Make sure that the newly created bot is a member of your channel. Use the "Add members or roles" button in the channel to invite your bot's role.
 
 ```diff
 image:
