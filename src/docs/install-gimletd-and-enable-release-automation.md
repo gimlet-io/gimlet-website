@@ -86,7 +86,7 @@ volumes:
 
 Once you did this basic configuration, time to run GimletD for the first time. Shall we?
 
-### Time to deploy GimletD
+### First startup, creating a user token
 
 When you first start GimletD, it inits a file based SQLite3 database and prints the admin token to the logs.
 

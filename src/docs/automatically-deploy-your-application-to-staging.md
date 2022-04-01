@@ -62,9 +62,9 @@ To do that, you have to extend your CI pipeline with an explicit step that ships
 
 ## Shipping artifact information to Gimlet
 
-Gimlet has [CI plugins](/docs/tbdtoreference) that ship the needed artifact information.
+Gimlet has [CI plugins](/docs/tbd) that ship the needed artifact information.
 
-First, set the `GIMLET_SERVER` and `GIMLET_TOKEN` secrets for your repository. These are [GimletD API access](/docs/tbdtoreference) credentials that you can get from your cluster administrator.
+First, set the `GIMLET_SERVER` and `GIMLET_TOKEN` secrets for your repository. These are [GimletD API access](/docs/install-gimletd-and-enable-release-automation#first-startup%2C-creating-a-user-token) credentials that you can get from your cluster administrator.
 
 Then alter your Github Action pipeline to ship the artifact to GimletD.
 
