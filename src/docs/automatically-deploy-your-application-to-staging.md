@@ -88,7 +88,7 @@ jobs:
         fetch-depth: 1
 +    - name: Shipping release artifact to Gimlet
 +      id: shipping
-+      uses: gimlet-io/gimlet-artifact-shipper-action@v0.4.2
++      uses: gimlet-io/gimlet-artifact-shipper-action@v0.5.1
 +      env:
 +        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
 +        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
