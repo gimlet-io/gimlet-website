@@ -90,8 +90,8 @@ jobs:
 +      id: shipping
 +      uses: gimlet-io/gimlet-artifact-shipper-action@v0.5.1
 +      env:
-+        GIMLET_SERVER: ${{ secrets.GIMLET_SERVER }}
-+        GIMLET_TOKEN: ${{ secrets.GIMLET_TOKEN }}
++        GIMLET_SERVER: {% raw %}${{ secrets.GIMLET_SERVER }}{% endraw %}
++        GIMLET_TOKEN: {% raw %}${{ secrets.GIMLET_TOKEN }}{% endraw %}
 ```
 
 If you do so, your Github Action will ship an artifact after everty docker image build.
