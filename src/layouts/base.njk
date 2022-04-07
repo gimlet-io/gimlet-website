@@ -11,7 +11,7 @@
 
     <meta content="{% if title %}{{ title }} | {% endif %}{{ site.title }}" property="og:title">
     <meta content="website" property="og:type">
-    <meta content="{{ 'https://gimlet.io/'+image | default('logo-social2.png') }}" property="og:image">
+    <meta content="{{ 'https://gimlet.io/'+image | default('logo-social.png') }}" property="og:image">
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     <meta content="Gimlet" property="og:site_name">
     <meta
@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ site.title }}">
     <meta name="twitter:description"
         content="{{ excerpt | default('A modular GitOps workflow for Kubernetes deployments that grows with you. It\'s open-source.') }}">
-    <meta name="twitter:image" content="{{ 'https://gimlet.io/'+image | default('logo-social2.png') }}">
+    <meta name="twitter:image" content="{{ 'https://gimlet.io/'+image | default('logo-social.png') }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
