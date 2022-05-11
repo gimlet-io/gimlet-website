@@ -58,7 +58,7 @@ In this tutorial we are going to use Flux V2 as the GitOps controller, and use t
 Fetch Gimlet Stack and install it with the following commands:
 
 ```bash
-curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.14.0/gimlet-$(uname)-$(uname -m) -o gimlet
+curl -L https://github.com/gimlet-io/gimlet/releases/download/cli-v0.15.0/gimlet-$(uname)-$(uname -m) -o gimlet
 chmod +x gimlet
 sudo mv ./gimlet /usr/local/bin/gimlet
 gimlet --version
