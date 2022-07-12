@@ -95,7 +95,7 @@ Triggers on any commit pushed to a branch that is prefixed with `feature/`.
 #### Negated branch trigger
 ```yaml
 +deploy:
-+  branch: !main
++  branch: "!main"
 +  event: push
 ```
 
